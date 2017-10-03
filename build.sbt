@@ -5,8 +5,9 @@ lazy val org = "io.christopherdavenport"
 // Projects Here
 
 lazy val root = project.in(file("."))
-    .settings(commonSettings)
-    .settings(noPublishSettings)
+  .settings(commonSettings)
+  .settings(noPublishSettings)
+  .aggregate(core, ldap, doobie)
 
 lazy val core = project.in(file("core"))
   .settings(commonSettings)
